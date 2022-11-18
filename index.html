@@ -23,16 +23,20 @@
           loading="lazy">
         <span class="ms-2">gifted</span>
       </a>
+      <button class="btn btn-warning" data-bs-toggle="offcanvas" data-bs-target="#giftCanvas"
+        aria-controls="offcanvasExample">canvas</button>
     </nav>
   </header>
-  <main>
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-12">
-          <div id="app"></div>
-        </div>
-      </div>
-    </div>
+  <main class="container-fluid">
+    <section id="gifts" class="row m-2">
+      <!-- <div class="col-3 card text-center">
+        <img class="img-fluid"
+          src="https://media.istockphoto.com/id/1128262881/vector/decorative-black-gift-box-with-golden-bow-isolated-on-white.jpg?s=612x612&w=0&k=20&c=Gun3eVyEhbfOTJtGvANml18ARBAqWD8UObeallkbltc="
+          alt="">
+        <h4>Gift Name</h4>
+        <h6>Opened?</h6>
+      </div> -->
+    </section>
   </main>
   <footer class="bg-dark text-light">
     <div class="text-center no-select">
@@ -40,6 +44,24 @@
     </div>
   </footer>
 
+  <div class="offcanvas offcanvas-start align-items-center" tabindex="-1" id="giftCanvas"
+    aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasExampleLabel">Add a gift</h5>
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <form onsubmit="app.giftsController.addGift()" action="">
+      <div>
+        <input type="text" title="Tag" name="tag" id="tag" placeholder="tag">
+      </div>
+      <div>
+        <input type="text" title="url" name="url" id="url" placeholder="url">
+      </div>
+      <button class="btn btn-primary">Add Gift</button>
+    </form>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.23.0/axios.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
     crossorigin="anonymous"></script>
